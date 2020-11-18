@@ -2,12 +2,13 @@
  * @Author: Carl
  * @Date: 2020-05-25 19:50:00
  * @LastEditors: Carl
- * @LastEditTime: 2020-11-18 15:42:35
+ * @LastEditTime: 2020-11-18 18:00:29
 -->
 
 # eWeLink-API
 
 酷宅开放平台4.0（国外访问）：https://coolkit-technologies.github.io/eWeLink-API/
+
 酷宅开放平台4.0（国内访问）：https://coolkit-carl.gitee.io/apidocs
 
 ---
