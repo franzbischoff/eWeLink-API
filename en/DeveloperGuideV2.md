@@ -298,7 +298,7 @@ The AP pairing is to enable device hotspot. After the app connects to the device
 
 Device hotspot SSID format: ITEAD-{deviceID}. Hotspot password: 12345678.
 
-After the APP connects to the device hotspot, steps 5 and 8 will be performed. Once the device responds, the app disconnects the device hotspot, and connects to the home WiFi, requests the "Add WiFi device" interface, and then adds the device to the account.
+After the APP connects to the device hotspot, steps 6 and 10 will be performed. Once the device responds, the app disconnects the device hotspot, and connects to the home WiFi, requests the "Add WiFi device" interface, and then adds the device to the account.
 
 Note: iOS requires the user to manually connect to the device hotspot due to system permission restrictions. After connecting, the device hotspot IP address is: 10.10.7.1. Android can obtain the current router IP address from the underlying library, and the IP address is not fixed.
 
