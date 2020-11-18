@@ -7,15 +7,14 @@ By applying our smart solutions and eWeLink Smart Cloud platform, our partners e
 
 ## Platform Strength
 
-- Business Strength: eWeLink has successfully connected with Alexa, Google Assistant, IFTTT, Tmall Genie, Baidu Duer OS, XiaoAi of Xiaomi, Dingdong of Jingdong, IFLYTEK and many other main voice platforms. Partners can link to the platforms above seamlessly, thus avoiding repetitive work and improving efficiency.
+- Business Strength: eWeLink has successfully connected with Alexa, Google Assistant, IFTTT, Yandex Alice, Tmall Genie, Baidu Duer OS, XiaoAi of Xiaomi, Dingdong of Jingdong, IFLYTEK and many other main voice platforms. Partners can link to the platforms above seamlessly, thus avoiding repetitive work and improving efficiency.
 - One-on-one Tech Support in Wechat Group
 
 ## Purposes of API
 
-- By providing API of device statistics and device controlling for third party partners,Coolkit technology opens the platform to help third party partners create more competitive applications.
-
-- Through accessing CoolKit API, third party partners can acquire data and control devices faster. Meanwhile, the services by third party partners bring richer experience to end users, through which platform eco thrives, benefiting all parties.
+- CoolKit Open platform provides various APIs for third-party partners to create their own applications to access device statistics, control devices, and apply other features via CoolKit Cloud servers.
+- By connecting CoolKit Open Platform, Third-party partners can build their own clients and achieve their business purposes faster, saving their time and energy to deploy their own cloud services. On the other hand, the services provided by third-party partners enrich consumers' user experience and develop eWeLink's ecoystem, creating a multi-win situation.
 
 ## Application Scenarios
 
-Smart Logistics, Smart Transportation, Smart Security, Smart Energy, Smart Medicine, Smart Building, Smart Production, Smart Home, Smart Retailing, Smart Agriculture 
+Smart Logistics, Smart Transportation, Smart Security, Smart Building, Smart Home, Smart Retailing, Smart Agriculture
