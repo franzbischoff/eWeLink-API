@@ -857,7 +857,6 @@ Request parameters:
 | familyid     | String            | Y                | The home ID of the group. When this field is empty, the group will be added to the current home.                                                                                                                         |
 | roomid       | String            | Y                | The ID of the room to which the group belongs. If it is empty, the group will be added to [Unallocated].                                                                                                                 |
 | sort         | Int               | Y                | The way to assign sequence number to the new group. 1=smaller sequence number 2=larger sequence number                                                                                                                   |
-| deviceidList | Array\<String\> | Y                | The list of device IDs to be added to a group to be created. No need to pass the ID of main device. If the UIID of any device in the list is not the same as that of the main device, it will not be added to the group. |
 
 Response data parameters:
 
@@ -1205,9 +1204,10 @@ Response data parameters:
 
 FamilyList items:
 
-| **Name** | **Type** | **Allows empty** | **Description**                                       |
+| **Name** | **Type** | **Allows empty** | **Description**                                      |
 |:-------- |:-------- |:---------------- |:----------------------------------------------------- |
 | id       | String   | N                | Home ID                                               |
+| apikey   | String   | N                | User apikey                                           |
 | name     | String   | N                | Home name                                             |
 | index    | Int      | N                | Sequence number of the home, which could be negative. |
 | roomList | Array    | Y                | Room list                                             |
@@ -1538,7 +1538,7 @@ Config description:
 
 | Name       | Type   | Allows empty | Description                                                                                                                                                                                               |
 |:---------- |:------ |:------------ |:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| hbl        | number | Y            | Heartbeat, whether to send heartbeats to keep alive.0: No, 1: Yes                                                                                                                                         |
+| hb        | number | Y            | Heartbeat, whether to send heartbeats to keep alive.0: No, 1: Yes                                                                                                                                         |
 | hbInterval | number | Y            | Heartbeat interval, in seconds. The client needs to add 7 to this value as the interval to send keep the ping heartbeat alive.If it is not offered, the heartbeat interval will be 90 seconds by default. |
 
 Error code
@@ -1552,7 +1552,7 @@ Error code
   "error": 0,
   "apikey":"User APIKEY",
   "config":{
-    "hbl":1,
+    "hb":1,
     "hbInterval": 145
   },
   "sequence": "Millisecond-level timestamp , Example: 1571141530100" // Same as sent
