@@ -20,7 +20,7 @@ How access token is used remains the same.See below:
 |:--------------- |:------------------------------------------------------- |:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | X-CK-Appid | The interface under the [User] category cannot be empty | The idendifier assigned to the app to control the interface calling permission|
 | X-CK-Nonce| Yes| A combination of 8 uppercase or lowercase letters and numbers. The client should try to use random strings to facilitate joint debugging with the server.|
-| Authorization   | Not allowed to be empty                                 | API call credentials, see [Development Documents/Signature Rules for the calculation method ](/en/DeveloperGuideV?id=signature-rules)|
+| Authorization   | Not allowed to be empty                                 | API call credentials, see [Development Documents/Signature Rules for the calculation method](/en/DeveloperGuideV?id=signature-rules)|
 | Content-Type    | PUT and POST requests are not allowed to be empty       | Fixed as application/json|
 | Host            | Not allowed to be empty| Most HTTP clients will automatically add this field. If not, it must be explicitly specified by the code. The value is the corresponding interface domain name, such as: cn-apia.coolkit.cn, us-apia.coolkit.cc |
 
@@ -358,7 +358,6 @@ clientInfo description:
 | romVersion | String   | Y                | Android/ios OS version                              |
 | appVersion | String   | Y                | App version                                         |
 
-
 getThing description:
 
 | **Name**   | **Type** | **Allows empty** | **Description**                                                                                        |
@@ -671,7 +670,7 @@ Response data parameters:
 
 Note: In case that error code 30017 is returned, the reason is that the brand of this device has yet give authorization to your appid. Currently, authorization from brands owned by CoolKit is free. However, authorizations of other brands are retained by the device maker.  To learn more about the brand authorization, please consult the salesperson from our company in the related WeChat groups.
 
-```
+```json
 {
    "error": 30017,
    "msg": "this app does not support of adding this brand and its device",
@@ -1140,14 +1139,13 @@ Firmware upgrade:
 
 After the app obtains the firmware information, it displays a message to notify the user of new firmware available.  As soon as the user taps the upgrade button, and the app should issue an OTA command through the persistent connection:
 
-```
+```json
 {
     "action":"upgrade",
     "deviceid":"device ID",
     "apikey":"User APIKEY",
     "userAgent":"app",
     "sequence":"timestamp in milliseconds" ,
-    "ts":0,
     "params":{
         "model":"Device Model",
         "version":"firmware version to upgrade to",
@@ -1169,7 +1167,7 @@ After the app obtains the firmware information, it displays a message to notify 
 
 When the device confirms that the file is fine, it will respond (based on different firmware version, it may not respond but rather disconnect and download OTA directly):
 
-```
+```json
 {
     "userAgent":"device",
     "apikey":"User APIKEY",
@@ -1503,7 +1501,7 @@ Its parameters are as follows,
 | apikey    | string | N            | User apikey (obtainable from the login interface) |
 | appid     | string | N            | APPID                                             |
 | nonce     | string | N            | 8-digit alphanumeric random string                |
-| ts        | number | N            | Timestamp accurate to seconds                     |
+| ts        | number | Y            | Timestamp accurate to seconds                     |
 | userAgent | string | N            | Fixed parameter: app                              |
 | sequence  | string | N            | Timestamp accurate to milliseconds                |
 | version   | number | N            | Interface version: 8                              |
@@ -1570,7 +1568,7 @@ Parameters:
 | action   | string | N            | Fixed parameter: sysmsg                     |
 | apikey   | string | N            | User apikey (available from the login page) |
 | nonce    | string | N            | 8-digit alphanumeric random string          |
-| ts       | number | N            | Timestamp accurate to seconds               |
+| ts       | number | Y            | Timestamp accurate to seconds               |
 | deviceid | string | N            | Device ID                                   |
 | params   | object | N            | Parameters: {k:v}                           |
 
@@ -1604,7 +1602,6 @@ Parameters:
 | params    | object | N            | The server applies transparent transmission for the params, which may be an object or an array of objects. Just make sure you send the parameters of all the statuses you desire to change. |
 | userAgent | string | N            | app or device                                                                                                                                                                               |
 | sequence  | string | N            | Timestamp accurate to milliseconds                                                                                                                                                          |
-| ts        | number | N            | Fixed parameter: 0                                                                                                                                                                          |
 
 Example:
 
@@ -1615,7 +1612,6 @@ Example:
     "apikey":"User APIKEY",
     "userAgent":"app",
     "sequence": "1585297259553",
-    "ts ":0,
     "params":{
         "switch": "on" // single-channel device
     }
@@ -1767,7 +1763,6 @@ Parameters:
 | params    | array  | N            | String array, which specify the parameters to be checked for. If it is empty, all the parameteres of the device will be checked for. |
 | userAgent | string | N            | app or device                                                                                                                        |
 | sequence  | string | N            | Timestamp accurate to milliseconds                                                                                                   |
-| ts        | number | N            | Fixed parameter: 0                                                                                                                   |
 
 Example:
 
@@ -1778,7 +1773,6 @@ Example:
     "apikey":"User APIKEY",
     "sequence": "1585297259553",
     "params":["switch","timers "], // If the returned value is empty, you can use [] to query the statuses of all fields
-    "ts": 0,
     "from": "app",
     "userAgent": "app"
 }
