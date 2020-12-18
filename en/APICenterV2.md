@@ -1565,12 +1565,12 @@ Parameters:
 
 | Name     | Type   | Allows empty | Description                                 |
 |:-------- |:------ |:------------ |:------------------------------------------- |
-| action   | string | N            | Fixed parameter: sysmsg                     |
-| apikey   | string | N            | User apikey (available from the login page) |
 | nonce    | string | N            | 8-digit alphanumeric random string          |
-| ts       | number | Y            | Timestamp accurate to seconds               |
+| apikey   | string | N            | Current User apikey (available from the login interface) or the apikey of the master account (available from the interface for obtaining Thing list)|
 | deviceid | string | N            | Device ID                                   |
+| action   | string | N            | Fixed parameter: sysmsg                     |
 | params   | object | N            | Parameters: {k:v}                           |
+| ts       | number | Y            | Timestamp accurate to seconds               |
 
 Example:
 
@@ -1578,7 +1578,7 @@ Example:
 {
     "action":"sysmsg",
     "deviceid":"1000000001",
-    "apikey":"User APIKEY",
+    "apikey":"Current user APIKEY",
     "ts": 15452192511,
     "params":{
         "online":false
@@ -1597,7 +1597,7 @@ Parameters:
 | Name      | Type   | Allows empty | Description                                                                                                                                                                                 |
 |:--------- |:------ |:------------ |:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | action    | string | N            | Fixed parameter: update                                                                                                                                                                     |
-| apikey    | string | N            | User apikey (available from the login page)                                                                                                                                                 |
+| apikey    | string | N            | Current user apikey (available from the login interface) or the apikey of the master account (available from the interface for obtaining Thing list)|
 | deviceid  | string | N            | Device ID                                                                                                                                                                                   |
 | params    | object | N            | The server applies transparent transmission for the params, which may be an object or an array of objects. Just make sure you send the parameters of all the statuses you desire to change. |
 | userAgent | string | N            | app or device                                                                                                                                                                               |
@@ -1609,7 +1609,22 @@ Example:
 {
     "action":"update",
     "deviceid":"100000001",
-    "apikey":"User APIKEY",
+    "apikey":"Current user APIKEY",
+    "userAgent":"app",
+    "sequence": "1585297259553",
+    "params":{
+        "switch": "on" // single-channel device
+    }
+}
+```
+
+If you update the device status shared by other users:
+
+```json
+{
+    "action":"update",
+    "deviceid":"100000001",
+    "apikey":"APIKEY of the master account",
     "userAgent":"app",
     "sequence": "1585297259553",
     "params":{
@@ -1643,6 +1658,7 @@ Example:
     "sequence": "1585297259553"
 }
 ```
+
 Error code
 
 504: The device does not respond (offline or command error)
@@ -1758,7 +1774,7 @@ Parameters:
 | Name      | Type   | Allows empty | Description                                                                                                                          |
 |:--------- |:------ |:------------ |:------------------------------------------------------------------------------------------------------------------------------------ |
 | action    | string | N            | Fixed parameter: query                                                                                                               |
-| apikey    | string | N            | User apikey (available from the login page)                                                                                          |
+| apikey    | string | N            | User apikey (available from the login interface) or the apikey of the master account (available from the interface for obtaining Thing list)|
 | deviceid  | string | N            | Device ID                                                                                                                            |
 | params    | array  | N            | String array, which specify the parameters to be checked for. If it is empty, all the parameteres of the device will be checked for. |
 | userAgent | string | N            | app or device                                                                                                                        |
@@ -1775,6 +1791,20 @@ Example:
     "params":["switch","timers "], // If the returned value is empty, you can use [] to query the statuses of all fields
     "from": "app",
     "userAgent": "app"
+}
+```
+
+If you query the device status shared by other users:
+
+```json
+{
+    "action":"query",
+    "userAgent":"app",
+    "apikey":"APIKEY of the master account",
+    "deviceid":"1000000001",
+    "params":["switch","timers"],
+    "sequence":"1585297259553",
+    "selfApikey":"Current user APIKEY"}
 }
 ```
 
