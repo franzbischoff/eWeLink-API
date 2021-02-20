@@ -2,13 +2,14 @@
  * @Author: Carl
  * @Date: 2020-08-05 17:16:26
  * @LastEditors: Carl
- * @LastEditTime: 2021-01-18 10:46:27
+ * @LastEditTime: 2021-02-20 15:54:15
 -->
 
 # Change log
 
 | Time | Change log | Author |
 | :--- | :--- | :--- |
+| 2021.02.20 | "Content-Type" parameter supports filling in "application/json; charset-utf-8" | Carl |
 | 2021.01.18 | Important: change of charging standard | Carl |
 | 2020.12.18 | Supplement the parameter transfer situation when querying or updating the device status shared by other users (WebSocket) | Carl |
 | 2020.10.30 | Update the user information returned in the user-related interface and add the ipCountry field | Carl |

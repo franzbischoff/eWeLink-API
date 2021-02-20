@@ -21,7 +21,7 @@ How access token is used remains the same.See below:
 | X-CK-Appid | The interface under the [User] category cannot be empty | The idendifier assigned to the app to control the interface calling permission|
 | X-CK-Nonce| Yes| A combination of 8 uppercase or lowercase letters and numbers. The client should try to use random strings to facilitate joint debugging with the server.|
 | Authorization   | Not allowed to be empty                                 | API call credentials, see [Development Documents/Signature Rules for the calculation method](/en/DeveloperGuideV?id=signature-rules)|
-| Content-Type    | PUT and POST requests are not allowed to be empty       | Fixed as application/json|
+| Content-Type    | PUT and POST requests are not allowed to be empty       | Fixed as "application/json" or "application/json; charset-utf-8" |
 | Host            | Not allowed to be empty| Most HTTP clients will automatically add this field. If not, it must be explicitly specified by the code. The value is the corresponding interface domain name, such as: cn-apia.coolkit.cn, us-apia.coolkit.cc |
 
 ### Interface domain name
