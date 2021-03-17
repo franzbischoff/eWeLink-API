@@ -448,11 +448,22 @@ devGroups description:
 | type     | Int      | N                | 1 represents device group |
 | groupId  | String   | N                | Group ID                  |
 
-sharedBy and shareTo list item description:
+sharedBy list item description:
 
 | **Name**    | **Type** | **Allows empty** | **Description**                                                  |
 |:----------- |:-------- |:---------------- |:---------------------------------------------------------------- |
 | apikey      | String   | N                | The apikey of the device owner                                   |
+| phoneNumber | String   | Y                | Mobile number of the device owner                                |
+| email       | String   | Y                | Email of the device owner                                        |
+| nickname    | String   | Y                | Email of the device owner                                        |
+| permit      | Int      | N                | User's permission value, default is 0                            |
+| comment     | String   | Y                | Note of sharing                                                  |
+| shareTime   | Long     | Y                | GMT standard time, in milliseconds, used to order sharing in app |
+
+shareTo list item description:
+
+| **Name**    | **Type** | **Allows empty** | **Description**                                                  |
+|:----------- |:-------- |:---------------- |:---------------------------------------------------------------- |
 | phoneNumber | String   | Y                | Mobile number of the device owner                                |
 | email       | String   | Y                | Email of the device owner                                        |
 | nickname    | String   | Y                | Email of the device owner                                        |
