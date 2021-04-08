@@ -1036,7 +1036,7 @@ Response data parameters:
 
 | **Name**         | **Type** | **Allows empty** | **Description**                                                                                                             |
 |:---------------- |:-------- |:---------------- |:--------------------------------------------------------------------------------------------------------------------------- |
-| updatedThingList | Array    | N                | The updated thing list of  the devices. See [Add device] interface for response, containing the information of shared user. |
+| updatedThing | Array    | N                | The updated thing of the devices. See [Add device] interface for response, containing the information of shared user. |
 
 ### Cancel Sharing
 
@@ -1055,7 +1055,7 @@ Response data parameters:
 
 | **Name**         | **Type** | **Allows empty** | **Description**                                                                                                            |
 |:---------------- |:-------- |:---------------- |:-------------------------------------------------------------------------------------------------------------------------- |
-| updatedThingList | Array    | N                | The updated thing list of the devices. See [Add device] interface for response, containing the information of shared user. |
+| updatedThing | Array    | N                | The updated thing of the devices. See [Add device] interface for response, containing the information of shared user. |
 
 ### Get Device Operating History
 
