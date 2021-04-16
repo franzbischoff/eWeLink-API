@@ -452,10 +452,10 @@ sharedBy list item description:
 
 | **Name**    | **Type** | **Allows empty** | **Description**                                                  |
 |:----------- |:-------- |:---------------- |:---------------------------------------------------------------- |
-| apikey      | String   | N                | The apikey of the device owner                                   |
+| apikey      | String   | N                | Unique identity of the user to which the device belongs (currently using symmetric encryption of the string)|
 | phoneNumber | String   | Y                | Mobile number of the device owner                                |
 | email       | String   | Y                | Email of the device owner                                        |
-| nickname    | String   | Y                | Email of the device owner                                        |
+| nickname    | String   | Y                | Nickname of the device owner                                        |
 | permit      | Int      | N                | User's permission value, default is 0                            |
 | comment     | String   | Y                | Note of sharing                                                  |
 | shareTime   | Long     | Y                | GMT standard time, in milliseconds, used to order sharing in app |
@@ -464,12 +464,13 @@ shareTo list item description:
 
 | **Name**    | **Type** | **Allows empty** | **Description**                                                  |
 |:----------- |:-------- |:---------------- |:---------------------------------------------------------------- |
-| phoneNumber | String   | Y                | Mobile number of the device owner                                |
+| apikey      | String   | Y                | ID identification of the user account shared by the receiving device (symmetric encryption of the string is currently used)|
 | email       | String   | Y                | Email of the device owner                                        |
-| nickname    | String   | Y                | Email of the device owner                                        |
-| permit      | Int      | N                | User's permission value, default is 0                            |
-| comment     | String   | Y                | Note of sharing                                                  |
+| nickname    | String   | Y                | Nickname of the device owner                                   |
 | shareTime   | Long     | Y                | GMT standard time, in milliseconds, used to order sharing in app |
+| phoneNumber | String   | Y                | Mobile number of the device owner                                |
+| comment     | String   | Y                | Note of sharing                                                  |
+| permit      | Int      | N                | User's permission value, default is 0                            |
 
 devConfig description (camera)：
 
@@ -1027,7 +1028,7 @@ Request parameters:
 | **Name** | **Type** | **Allows empty** | **Description**                                                         |
 |:-------- |:-------- |:---------------- |:----------------------------------------------------------------------- |
 | deviceid | String   | N                | Device ID                                                               |
-| apikey   | String   | N                | Apikey of the shared user whose sharing permissions are to be modified. |
+| apikey   | String   | N                | ID identification of the user account shared by the receiving device (symmetric encryption of the string is currently used) |
 | permit   | Int      | N                | Updated sharing permissions. See [Device sharing] endpoint for details. |
 
 Note: The apikey parameter comes from the detailed information of the device. Please search for the parameter shareTo in the document.
