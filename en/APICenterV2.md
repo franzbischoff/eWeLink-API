@@ -802,7 +802,7 @@ Response data parameters:
 |:------------ |:-------- |:---------------- |:------------------------------------ |
 | updatedThing | Object   | N                | The thing data of the updated device |
 
-### Get Group List 
+### Get Group List
 
 URL: /v2/device/group
 
@@ -863,7 +863,7 @@ Request parameters:
 
 | **Name**     | **Type**          | **Allows empty** | **Description**                                                                                                                                                                                                          |
 |:------------ |:----------------- |:---------------- |:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| name         | String            | N                | Group name                                                                                                                                                                                                               |
+| name         | String            | N                | Group name, The maximum length is 50 characters                                                                                                                                                                                                               |
 | mainDeviceId | String            | N                | The ID of main device in the group                                                                                                                                                                                       |
 | familyid     | String            | Y                | The home ID of the group. When this field is empty, the group will be added to the current home.                                                                                                                         |
 | roomid       | String            | Y                | The ID of the room to which the group belongs. If it is empty, the group will be added to [Unallocated].                                                                                                                 |
@@ -891,7 +891,7 @@ Request parameters:
 | **Name** | **Type** | **Allows empty** | **Description**    |
 |:-------- |:-------- |:---------------- |:------------------ |
 | id       | String   | N                | Group ID           |
-| name     | String   | N                | The new group name |
+| name     | String   | N                | The new group name, The maximum length is 50 characters |
 
 Response data parameter: None
 
@@ -945,7 +945,7 @@ Response data parameters:
 |:---------------- |:-------- |:---------------- |:-------------------------------------- |
 | updatedThingList | Array    | N                | The thing list of the updated devices. |
 
-### Delete Devices from Group 
+### Delete Devices from Group
 
 URL: /v2/device/group/delete
 
