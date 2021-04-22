@@ -742,7 +742,7 @@ Request parameters:
 |:--------- |:-------- |:---------------- |:---------------------------------------------------------------------------------------------------------------------------------------- |
 | deviceid  | String   | N                | Device ID                                                                                                                                |
 | name      | String   | Y                | Device name                                                                                                                              |
-| roomid    | String   | Y                | ID of the room in which the device located. You can only change it to a room in the current home, but not to a room in a different home. |
+| roomid    | String   | Y                | ID of the room in which the device located. |
 
 Response data parameter: None
 
